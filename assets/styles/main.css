@@ -1,0 +1,234 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+}
+
+html, body, #app, .banner {
+  height: 100svh;
+  overflow: hidden;
+}
+
+.banner {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  background: url('../images/bg.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding: 0 24px;
+}
+
+.close {
+  border: none;
+  position: absolute;
+  cursor: pointer;
+  top: 8.8svh;
+  width: 12px;
+  height: 12px;
+  background: url('../images/cross.svg') center/contain no-repeat;
+}
+
+@media (max-width: 375px), (max-height: 780px) {
+  .close {
+    top: 3.8svh;
+  }
+}
+
+.close img {
+  width: 100%;
+}
+
+.title {
+  padding: 30svh 0 41px;
+  font-weight: 900;
+  font-size: 42px;
+  line-height: 110%;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 0 48px 0 rgba(4, 3, 26, 0.83);
+}
+
+html[lang="de"] .title,
+html[lang="fr"] .title ,
+html[lang="pt"] .title {
+  font-size: 30px;
+}
+
+@media (max-width: 375px), (max-height: 780px) {
+  .title {
+    padding: 17svh 0 41px;
+  }
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+.features .features_card {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+  border-radius: 10.8px;
+  overflow: clip;
+  width: 105px;
+  height: 139px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.features .features_card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(180deg, #00000000 0%, rgb(4 6 26 / 0%) 62%, rgb(6 9 37 / 56%) 77%, #15072F 100%);
+    z-index: 1;
+}
+
+.features .features_card p {
+  width: 100%;
+  padding: 0 7px 11px;
+  z-index: 2;
+  font-weight: 400;
+  font-size: 11px;
+  color: #fff;
+}
+
+.plans {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 58px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #fff;
+}
+
+.plan {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 32px;
+  padding: 0 24px;
+  width: 100%;
+  height: 56px;
+  backdrop-filter: blur(10.87px);
+  background: rgba(255, 255, 255, 0.1);
+  font-weight: 400;
+}
+
+.plan:not(.active) {
+  cursor: pointer;
+}
+
+.plan.active {
+  outline: 1px solid #fff;
+  outline-offset: -1px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.plan .left {
+  display: flex;
+  flex-direction: column;
+}
+.plan .left p {
+  opacity: 0.7;
+}
+
+.plan .left h2 {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.plan .right {
+  padding-top: 3px;
+  padding-right: 43px;
+}
+
+html[lang="de"] .right,
+html[lang="fr"] .right ,
+html[lang="pt"] .right {
+  padding-right: 0;
+}
+
+.plan .right p {
+  opacity: 0.7;
+}
+
+
+.plan .best {
+  position: absolute;
+  height: 20px;
+  top: -9px;
+  right: 24px;
+  font-weight: 700;
+  font-size: 13px;
+  color: #141131;
+  padding: 2px 22px 3px 23px;
+  background: #fff;
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.continue-button {
+  cursor: pointer;
+  margin-top: 16px;
+  background: #fff;
+  padding: 16px 0;
+  border-radius: 32px;
+  width: 100%;
+  font-weight: 590;
+  font-size: 20px;
+  line-height: 120%;
+  color: #070b33;
+}
+
+@media (max-width: 375px), (max-height: 780px) {
+  .continue-button {
+  margin-top: 8px;
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-align: center;
+  flex: 1;
+  align-items: flex-end;
+  padding-bottom: 40px;
+}
+
+html[lang="de"] footer {
+  font-size: 10px;
+}
+
+footer a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 375px) {
+  footer {
+    padding-bottom: 11px;
+  }
+}
